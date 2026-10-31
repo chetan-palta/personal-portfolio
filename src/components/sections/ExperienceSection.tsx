@@ -9,68 +9,76 @@ import {
   Calendar,
   MapPin,
   ArrowRight,
-  Code,
-  ShieldAlert,
+  Code2,
+  Search,
+  BarChart3,
+  Layers,
+  Terminal,
 } from "lucide-react";
 import { EXPERIENCE } from "@/data/portfolioData";
-import DecryptedText from "../effects/DecryptedText";
 
 export const ExperienceSection: React.FC = () => {
   const exp = EXPERIENCE[0];
 
   return (
-    <section className="py-24 border-t border-white/5 bg-[#08090D] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-16">
-          <div className="flex items-center gap-2 text-xs font-mono text-accent-blue uppercase tracking-widest mb-3">
-            <span>// COMMERCIAL TRACK RECORD</span>
+    <section className="py-28 border-t border-white/[0.06] bg-cosmos-void relative overflow-hidden">
+      {/* Background radial glow */}
+      <div
+        className="pointer-events-none absolute bottom-0 left-1/4 w-[600px] h-[300px] bg-indigo-electric/10 rounded-full blur-[140px]"
+        aria-hidden="true"
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header */}
+        <div className="max-w-3xl mb-16 space-y-4">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-cyan-soft uppercase tracking-widest">
+            <span>// 03 COMMERCIAL INFRASTRUCTURE</span>
           </div>
-          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#F5F5F7] tracking-tight">
+          <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-6xl text-silver-pure tracking-[-0.03em]">
             Commercial Experience.
           </h2>
-          <p className="mt-3 text-[#9A9EAA] text-base">
-            Practical development delivering production-grade web systems for enterprise operations.
+          <p className="text-sm sm:text-base text-silver-muted font-light leading-relaxed">
+            Real commercial delivery. Architecting, coding, and deploying production-grade web systems for enterprise operations.
           </p>
         </div>
 
-        {/* Shiva Glass Group In-Depth Card */}
-        <div className="relative rounded-2xl border border-white/10 bg-[#10121A] p-8 lg:p-12 overflow-hidden shadow-2xl hover:border-accent-blue/40 transition-all duration-300">
-          {/* Subtle background glow */}
+        {/* Major Flagship Experience Card */}
+        <div className="rounded-3xl bg-cosmos-card/80 border border-white/[0.08] p-8 sm:p-12 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+          {/* Subtle top indicator border */}
           <div
-            className="pointer-events-none absolute top-0 right-0 w-96 h-96 bg-accent-blue/10 rounded-full blur-3xl"
+            className="pointer-events-none absolute top-0 left-0 w-32 h-[2px] bg-gradient-to-r from-indigo-bright to-cyan-soft"
             aria-hidden="true"
           />
 
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
             {/* Left Column: Organization & Meta */}
-            <div className="lg:col-span-4 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+            <div className="lg:col-span-5 space-y-6">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Current Role</span>
+                <span>ACTIVE COMMERCIAL ROLE</span>
               </div>
 
               <div>
-                <h3 className="font-heading font-bold text-2xl sm:text-3xl text-[#F5F5F7]">
+                <h3 className="font-heading font-black text-3xl sm:text-4xl text-silver-pure tracking-tight">
                   {exp.company}
                 </h3>
-                <div className="text-base text-accent-blue font-medium mt-1">
+                <div className="text-lg text-indigo-bright font-medium mt-1">
                   {exp.role}
                 </div>
               </div>
 
-              <div className="space-y-2 text-xs font-mono text-[#9A9EAA]">
+              <div className="space-y-2 text-xs font-mono text-silver-muted">
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-3.5 h-3.5 text-accent-cyan" />
+                  <Calendar className="w-3.5 h-3.5 text-cyan-soft" />
                   <span>{exp.period}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <MapPin className="w-3.5 h-3.5 text-accent-cyan" />
+                  <MapPin className="w-3.5 h-3.5 text-cyan-soft" />
                   <span>{exp.location} ({exp.type})</span>
                 </div>
               </div>
 
-              <p className="text-sm text-[#9A9EAA] leading-relaxed">
+              <p className="text-sm sm:text-base text-silver-muted font-light leading-relaxed">
                 {exp.summary}
               </p>
 
@@ -79,29 +87,29 @@ export const ExperienceSection: React.FC = () => {
                   href="https://shivaglassgroup.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-accent-blue/10 hover:bg-accent-blue/20 text-accent-blue border border-accent-blue/30 text-xs font-mono transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-electric/15 hover:bg-indigo-electric/25 text-indigo-bright border border-indigo-bright/30 text-xs font-mono transition-colors"
                 >
-                  <span>Visit shivaglassgroup.com</span>
+                  <span>Visit Production Site (shivaglassgroup.com)</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </div>
             </div>
 
-            {/* Right Column: Engineering Responsibilities & Verified Deliverables */}
-            <div className="lg:col-span-8 space-y-6">
-              <h4 className="font-heading font-semibold text-lg text-[#F5F5F7] pb-3 border-b border-white/5">
-                Key Engineering Responsibilities & Deliverables
+            {/* Right Column: Architectural Deliverables */}
+            <div className="lg:col-span-7 space-y-6">
+              <h4 className="font-heading font-bold text-xl text-silver-pure pb-3 border-b border-white/[0.06]">
+                Engineering Responsibilities & Systems Ownership
               </h4>
 
               <div className="grid grid-cols-1 gap-3.5">
-                {exp.responsibilities.map((item, index) => (
+                {exp.responsibilities.map((resp, i) => (
                   <div
-                    key={index}
-                    className="flex items-start gap-3 p-3.5 rounded-xl bg-[#141722]/80 border border-white/5 hover:border-white/10 transition-colors"
+                    key={i}
+                    className="flex items-start gap-3 p-4 rounded-2xl bg-cosmos-elevated/70 border border-white/[0.05] hover:border-white/10 transition-colors"
                   >
-                    <CheckCircle2 className="w-4 h-4 text-accent-blue shrink-0 mt-0.5" />
-                    <span className="text-xs sm:text-sm text-[#9A9EAA] leading-relaxed">
-                      {item}
+                    <CheckCircle2 className="w-4 h-4 text-cyan-soft shrink-0 mt-0.5" />
+                    <span className="text-xs sm:text-sm text-silver-muted leading-relaxed">
+                      {resp}
                     </span>
                   </div>
                 ))}
@@ -109,14 +117,14 @@ export const ExperienceSection: React.FC = () => {
 
               {/* Technologies Applied */}
               <div className="pt-4">
-                <span className="text-xs font-mono text-[#5E6375] uppercase tracking-wider block mb-2">
-                  Technology Stack Applied
+                <span className="text-[11px] font-mono text-silver-dark uppercase tracking-wider block mb-2.5">
+                  Applied Technology Stack
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {exp.technologies.map((t) => (
                     <span
                       key={t}
-                      className="px-3 py-1 rounded-lg text-xs font-mono bg-white/5 text-[#F5F5F7] border border-white/5"
+                      className="px-3 py-1 rounded-lg text-xs font-mono bg-white/[0.04] text-silver-pure border border-white/[0.06]"
                     >
                       {t}
                     </span>
@@ -124,16 +132,15 @@ export const ExperienceSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Case study deep-dive link */}
-              <div className="pt-4 flex items-center justify-between">
-                <span className="text-xs font-mono text-[#58D8F0]">
-                  Verified commercial development from scratch
+              <div className="pt-4 flex items-center justify-between border-t border-white/[0.06]">
+                <span className="text-xs font-mono text-cyan-soft">
+                  Full-stack implementation from zero to production
                 </span>
                 <Link
                   href="/projects/shiva-glass"
-                  className="inline-flex items-center gap-1.5 text-xs font-mono text-accent-blue hover:text-white transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono text-indigo-bright hover:text-white transition-colors"
                 >
-                  <span>Deep Dive Case Study</span>
+                  <span>Read In-Depth Case Study</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -146,4 +153,3 @@ export const ExperienceSection: React.FC = () => {
 };
 
 export default ExperienceSection;
-

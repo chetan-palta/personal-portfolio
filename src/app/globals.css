@@ -7,20 +7,18 @@
   --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
   --font-jetbrains-mono: 'JetBrains Mono', monospace;
 
-  --bg-primary: #08090d;
-  --bg-secondary: #10121a;
-  --bg-card: #141722;
-  --bg-card-hover: #1a1e2d;
+  --bg-void: #050608;
+  --bg-deep: #090a0f;
+  --bg-card: #0f111a;
+  --bg-elevated: #151824;
 
-  --text-primary: #f5f5f7;
-  --text-secondary: #9a9eaa;
-  --text-muted: #5e6375;
+  --text-silver: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dark: #64748b;
 
-  --accent-blue: #6c8cff;
-  --accent-cyan: #58d8f0;
-  --accent-glow: rgba(108, 140, 255, 0.18);
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-active: rgba(108, 140, 255, 0.4);
+  --accent-indigo: #6366f1;
+  --accent-violet: #8b5cf6;
+  --accent-cyan: #22d3ee;
 }
 
 * {
@@ -29,42 +27,67 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: var(--bg-void);
+  color: var(--text-silver);
 }
 
 body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: var(--bg-void);
+  color: var(--text-silver);
   font-family: var(--font-inter);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background: rgba(108, 140, 255, 0.35);
+  background: rgba(99, 102, 241, 0.4);
   color: #ffffff;
 }
 
-/* Custom Scrollbar */
+/* Custom Cosmic Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #08090d;
+  background: #050608;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #1e2230;
-  border-radius: 4px;
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #6c8cff;
+  background: #6366f1;
+}
+
+/* Cosmic Gradient Mesh & Background Utilities */
+.cosmic-noise {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.cosmic-panel {
+  background: rgba(15, 17, 26, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.cosmic-panel-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cosmic-panel-hover:hover {
+  border-color: rgba(99, 102, 241, 0.45);
+  box-shadow: 0 0 35px rgba(99, 102, 241, 0.15), 0 0 15px rgba(139, 92, 246, 0.1);
+  transform: translateY(-2px);
 }
 
 /* Monospace telemetry styles */
-.code-tag {
+.font-mono-telemetry {
   font-family: var(--font-jetbrains-mono);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }

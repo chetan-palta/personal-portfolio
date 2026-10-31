@@ -14,16 +14,15 @@ import {
   Sparkles,
 } from "lucide-react";
 import { PERSONAL_INFO } from "@/data/portfolioData";
-import Magnet from "../effects/Magnet";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/10 bg-[#08090D] relative overflow-hidden">
-      {/* Subtle top glow */}
+    <footer className="border-t border-white/[0.06] bg-cosmos-void relative overflow-hidden">
+      {/* Subtle top laser border */}
       <div
-        className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-[1px] w-3/4 max-w-4xl bg-gradient-to-r from-transparent via-accent-blue/50 to-transparent"
+        className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-[1px] w-3/4 max-w-4xl bg-gradient-to-r from-transparent via-indigo-bright/50 to-transparent"
         aria-hidden="true"
       />
 
@@ -32,105 +31,85 @@ export const Footer: React.FC = () => {
           {/* Identity column */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#6C8CFF] to-[#58D8F0] p-[1px] flex items-center justify-center">
-                <div className="w-full h-full bg-[#08090D] rounded-[7px] flex items-center justify-center">
-                  <span className="font-heading font-bold text-xs text-[#F5F5F7]">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-bright via-violet-soft to-cyan-laser p-[1px] flex items-center justify-center">
+                <div className="w-full h-full bg-cosmos-void rounded-[7px] flex items-center justify-center">
+                  <span className="font-heading font-black text-xs text-silver-pure">
                     CP
                   </span>
                 </div>
               </div>
-              <span className="font-heading font-bold text-lg text-[#F5F5F7] tracking-tight">
+              <span className="font-heading font-bold text-lg text-silver-pure tracking-tight">
                 CHETAN PALTA
               </span>
             </div>
 
-            <p className="text-sm text-[#9A9EAA] max-w-sm leading-relaxed">
-              Software developer focused on AI + Full-Stack engineering,
-              transforming real-world ideas into reliable, high-performance
-              digital products.
+            <p className="text-sm text-silver-muted max-w-sm leading-relaxed font-light">
+              AI + Full-Stack Developer engineering practical digital products, intelligent systems, and scalable web architectures.
             </p>
 
-            <div className="pt-2 flex flex-col gap-1.5 text-xs font-mono text-[#9A9EAA]">
+            <div className="pt-2 flex flex-col gap-1.5 text-xs font-mono text-silver-muted">
               <div className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-accent-cyan" />
-                <span>Ludhiana, Punjab, India</span>
+                <MapPin className="w-3.5 h-3.5 text-cyan-soft" />
+                <span>Ludhiana, Punjab, India (30.9010° N, 75.8573° E)</span>
               </div>
               <div className="flex items-center gap-2">
-                <Sparkles className="w-3.5 h-3.5 text-accent-blue" />
+                <Sparkles className="w-3.5 h-3.5 text-indigo-bright" />
                 <span>Software Development Intern @ Shiva Glass Group</span>
               </div>
-              <div className="flex items-center gap-2 text-[#58D8F0]">
-                <span>BCA @ Guru Nanak Dev Engineering College · CGPA 8.7</span>
+              <div className="flex items-center gap-2 text-cyan-soft">
+                <span>Guru Nanak Dev Engineering College · BCA CGPA 8.7</span>
               </div>
             </div>
           </div>
 
           {/* Navigation Links */}
           <div className="md:col-span-3 space-y-3">
-            <span className="text-xs font-mono uppercase tracking-wider text-[#F5F5F7] block">
+            <span className="text-xs font-mono uppercase tracking-wider text-silver-pure block">
               Navigation
             </span>
-            <ul className="space-y-2 text-sm text-[#9A9EAA]">
+            <ul className="space-y-2 text-sm font-mono text-silver-muted">
               <li>
-                <Link href="/" className="hover:text-white transition-colors">
+                <Link href="/" className="hover:text-silver-pure transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/about"
-                  className="hover:text-white transition-colors"
-                >
-                  About & Education
+                <Link href="/about" className="hover:text-silver-pure transition-colors">
+                  About & Academics
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/work"
-                  className="hover:text-white transition-colors"
-                >
-                  Selected Work
+                <Link href="/work" className="hover:text-silver-pure transition-colors">
+                  Featured Work
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/experience"
-                  className="hover:text-white transition-colors"
-                >
+                <Link href="/experience" className="hover:text-silver-pure transition-colors">
                   Commercial Experience
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/engineering"
-                  className="hover:text-white transition-colors"
-                >
+                <Link href="/engineering" className="hover:text-silver-pure transition-colors">
                   Engineering & DSA
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/journal"
-                  className="hover:text-white transition-colors"
-                >
-                  Technical Journal
+                <Link href="/journal" className="hover:text-silver-pure transition-colors">
+                  Engineering Journal
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/contact"
-                  className="hover:text-white transition-colors"
-                >
+                <Link href="/contact" className="hover:text-silver-pure transition-colors">
                   Contact
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Social Profiles & Direct Contact */}
+          {/* Social Profiles */}
           <div className="md:col-span-4 space-y-4">
-            <span className="text-xs font-mono uppercase tracking-wider text-[#F5F5F7] block">
-              Verified Profiles
+            <span className="text-xs font-mono uppercase tracking-wider text-silver-pure block">
+              Verified Telemetry
             </span>
 
             <div className="grid grid-cols-2 gap-2 text-xs font-mono">
@@ -138,10 +117,10 @@ export const Footer: React.FC = () => {
                 href={PERSONAL_INFO.socials.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-2.5 rounded-lg bg-[#141722] border border-white/10 hover:border-accent-blue/40 text-[#9A9EAA] hover:text-white transition-all group"
+                className="flex items-center justify-between p-2.5 rounded-xl bg-cosmos-card border border-white/[0.08] hover:border-indigo-bright/50 text-silver-muted hover:text-white transition-all group"
               >
                 <div className="flex items-center gap-2">
-                  <Github className="w-3.5 h-3.5 text-accent-blue" />
+                  <Github className="w-3.5 h-3.5 text-indigo-bright" />
                   <span>GitHub</span>
                 </div>
                 <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -151,10 +130,10 @@ export const Footer: React.FC = () => {
                 href={PERSONAL_INFO.socials.leetcode}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-2.5 rounded-lg bg-[#141722] border border-white/10 hover:border-accent-blue/40 text-[#9A9EAA] hover:text-white transition-all group"
+                className="flex items-center justify-between p-2.5 rounded-xl bg-cosmos-card border border-white/[0.08] hover:border-cyan-soft/50 text-silver-muted hover:text-white transition-all group"
               >
                 <div className="flex items-center gap-2">
-                  <Code2 className="w-3.5 h-3.5 text-accent-cyan" />
+                  <Code2 className="w-3.5 h-3.5 text-cyan-soft" />
                   <span>LeetCode</span>
                 </div>
                 <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -164,7 +143,7 @@ export const Footer: React.FC = () => {
                 href={PERSONAL_INFO.socials.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-2.5 rounded-lg bg-[#141722] border border-white/10 hover:border-accent-blue/40 text-[#9A9EAA] hover:text-white transition-all group"
+                className="flex items-center justify-between p-2.5 rounded-xl bg-cosmos-card border border-white/[0.08] hover:border-blue-400/50 text-silver-muted hover:text-white transition-all group"
               >
                 <div className="flex items-center gap-2">
                   <Linkedin className="w-3.5 h-3.5 text-blue-400" />
@@ -177,7 +156,7 @@ export const Footer: React.FC = () => {
                 href={PERSONAL_INFO.socials.x}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-2.5 rounded-lg bg-[#141722] border border-white/10 hover:border-accent-blue/40 text-[#9A9EAA] hover:text-white transition-all group"
+                className="flex items-center justify-between p-2.5 rounded-xl bg-cosmos-card border border-white/[0.08] hover:border-sky-400/50 text-silver-muted hover:text-white transition-all group"
               >
                 <div className="flex items-center gap-2">
                   <Twitter className="w-3.5 h-3.5 text-sky-400" />
@@ -190,7 +169,7 @@ export const Footer: React.FC = () => {
             <div className="pt-2">
               <a
                 href={`mailto:${PERSONAL_INFO.email}`}
-                className="flex items-center gap-2 text-xs font-mono text-accent-blue hover:text-accent-cyan transition-colors"
+                className="flex items-center gap-2 text-xs font-mono text-indigo-bright hover:text-cyan-soft transition-colors"
               >
                 <Mail className="w-3.5 h-3.5" />
                 <span>{PERSONAL_INFO.email}</span>
@@ -200,24 +179,21 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-14 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#5E6375]">
+        <div className="mt-14 pt-8 border-t border-white/[0.05] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-silver-dark">
           <div>
-            © {currentYear} Chetan Palta. Built with Next.js, TypeScript & React
-            Bits.
+            © {currentYear} Chetan Palta · Digital Cosmos Engineering Portfolio.
           </div>
           <div className="flex items-center gap-4">
             <a
               href="/resume/chetan-palta-resume.pdf"
               download="Chetan_Palta_Resume.pdf"
-              className="text-[#9A9EAA] hover:text-white flex items-center gap-1 transition-colors"
+              className="text-silver-muted hover:text-white flex items-center gap-1 transition-colors"
             >
               <FileText className="w-3 h-3" />
               <span>Resume PDF</span>
             </a>
             <span>•</span>
-            <span className="text-[#58D8F0]/80">
-              Graduating BCA June 2026
-            </span>
+            <span className="text-cyan-soft/80">Graduating BCA June 2026</span>
           </div>
         </div>
       </div>
@@ -226,4 +202,3 @@ export const Footer: React.FC = () => {
 };
 
 export default Footer;
-

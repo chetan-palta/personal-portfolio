@@ -10,25 +10,33 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: {
-          DEFAULT: "#08090D",
-          secondary: "#10121A",
-          card: "#141722",
-          "card-hover": "#1A1E2D",
+        cosmos: {
+          void: "#050608",
+          deep: "#090A0F",
+          card: "#0F111A",
+          elevated: "#151824",
+          border: "rgba(255, 255, 255, 0.08)",
+          "border-hover": "rgba(99, 102, 241, 0.35)",
         },
-        foreground: {
-          DEFAULT: "#F5F5F7",
-          secondary: "#9A9EAA",
-          muted: "#5E6375",
+        indigo: {
+          electric: "#4F46E5",
+          bright: "#6366F1",
+          glow: "rgba(99, 102, 241, 0.22)",
         },
-        accent: {
-          blue: "#6C8CFF",
-          cyan: "#58D8F0",
-          glow: "rgba(108, 140, 255, 0.18)",
+        violet: {
+          deep: "#7C3AED",
+          soft: "#8B5CF6",
+          glow: "rgba(139, 92, 246, 0.18)",
         },
-        border: {
-          subtle: "rgba(255, 255, 255, 0.08)",
-          hover: "rgba(108, 140, 255, 0.4)",
+        cyan: {
+          laser: "#06B6D4",
+          soft: "#22D3EE",
+          glow: "rgba(34, 211, 238, 0.18)",
+        },
+        silver: {
+          pure: "#F8FAFC",
+          muted: "#94A3B8",
+          dark: "#64748B",
         },
       },
       fontFamily: {
@@ -37,24 +45,23 @@ const config: Config = {
         mono: ["var(--font-jetbrains-mono)", "monospace"],
       },
       animation: {
-        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        "spin-slow": "spin 20s linear infinite",
-        shimmer: "shimmer 2.5s linear infinite",
-        "star-movement-bottom": "star-movement-bottom linear infinite alternate",
-        "star-movement-top": "star-movement-top linear infinite alternate",
+        "spin-very-slow": "spin 45s linear infinite",
+        "spin-reverse-slow": "spin-reverse 35s linear infinite",
+        "pulse-glow": "pulse-glow 4s ease-in-out infinite",
+        float: "float 6s ease-in-out infinite",
       },
       keyframes: {
-        shimmer: {
-          from: { backgroundPosition: "0 0" },
-          to: { backgroundPosition: "-200% 0" },
+        "spin-reverse": {
+          "0%": { transform: "rotate(360deg)" },
+          "100%": { transform: "rotate(0deg)" },
         },
-        "star-movement-bottom": {
-          "0%": { transform: "translate(0%, 0%)", opacity: "1" },
-          "100%": { transform: "translate(-100%, 0%)", opacity: "0.2" },
+        "pulse-glow": {
+          "0%, 100%": { opacity: "0.4", transform: "scale(1)" },
+          "50%": { opacity: "0.8", transform: "scale(1.05)" },
         },
-        "star-movement-top": {
-          "0%": { transform: "translate(0%, 0%)", opacity: "1" },
-          "100%": { transform: "translate(100%, 0%)", opacity: "0.2" },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
         },
       },
     },

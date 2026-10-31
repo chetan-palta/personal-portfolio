@@ -56,39 +56,39 @@ const ICON_MAP: Record<string, React.ElementType> = {
 
 export const TechStackSection: React.FC = () => {
   return (
-    <section className="py-24 border-t border-white/5 bg-[#08090D] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-28 border-t border-white/[0.06] bg-cosmos-void relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="max-w-3xl mb-16">
-          <div className="flex items-center gap-2 text-xs font-mono text-accent-blue uppercase tracking-widest mb-3">
-            <span>// TECHNICAL CAPABILITIES</span>
+        <div className="max-w-3xl mb-16 space-y-4">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-cyan-soft uppercase tracking-widest">
+            <span>// 04 TECHNICAL ARSENAL</span>
           </div>
-          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#F5F5F7] tracking-tight">
-            Categorized Technical Stack.
+          <h2 className="font-heading font-black text-3xl sm:text-5xl lg:text-6xl text-silver-pure tracking-[-0.03em]">
+            Categorized Technical Arsenal.
           </h2>
-          <p className="mt-3 text-[#9A9EAA] text-base">
-            Disciplined tooling for building frontend interfaces, backend APIs, machine learning pipelines, and relational database systems.
+          <p className="text-sm sm:text-base text-silver-muted font-light leading-relaxed">
+            Proficiencies across software engineering fundamentals, full-stack web platforms, machine learning pipelines, and relational database systems.
           </p>
         </div>
 
-        {/* Categories Grid */}
+        {/* Categories Matrix */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {TECH_STACK.map((cat, idx) => (
             <div
               key={cat.category}
-              className="rounded-2xl border border-white/10 bg-[#10121A] p-6 hover:border-accent-blue/40 transition-all duration-300 flex flex-col justify-between"
+              className="rounded-3xl bg-cosmos-card/70 border border-white/[0.08] p-7 hover:border-indigo-bright/40 transition-all duration-300 flex flex-col justify-between backdrop-blur-md group"
             >
               <div>
-                <div className="flex items-center justify-between pb-4 border-b border-white/5 mb-4">
-                  <h3 className="font-heading font-semibold text-base text-[#F5F5F7]">
+                <div className="flex items-center justify-between pb-4 border-b border-white/[0.06] mb-4">
+                  <h3 className="font-heading font-bold text-lg text-silver-pure group-hover:text-indigo-bright transition-colors">
                     {cat.category}
                   </h3>
-                  <span className="font-mono text-xs text-accent-cyan">
+                  <span className="font-mono text-xs text-cyan-soft">
                     0{idx + 1}
                   </span>
                 </div>
 
-                <p className="text-xs text-[#9A9EAA] mb-4">
+                <p className="text-xs text-silver-muted mb-5 leading-relaxed font-light">
                   {cat.description}
                 </p>
 
@@ -98,15 +98,15 @@ export const TechStackSection: React.FC = () => {
                     return (
                       <div
                         key={skill.name}
-                        className="flex items-center justify-between p-2.5 rounded-lg bg-[#141722] border border-white/5 hover:border-white/10 transition-colors"
+                        className="flex items-center justify-between p-3 rounded-xl bg-cosmos-elevated/60 border border-white/[0.04] hover:border-white/10 transition-colors"
                       >
-                        <div className="flex items-center gap-2.5">
-                          <IconComponent className="w-3.5 h-3.5 text-accent-blue" />
-                          <span className="text-xs font-medium text-[#F5F5F7]">
+                        <div className="flex items-center gap-3">
+                          <IconComponent className="w-4 h-4 text-indigo-bright" />
+                          <span className="text-xs font-medium text-silver-pure">
                             {skill.name}
                           </span>
                         </div>
-                        <span className="text-[10px] font-mono text-[#58D8F0]/80">
+                        <span className="text-[11px] font-mono text-cyan-soft/80">
                           {skill.level}
                         </span>
                       </div>
@@ -123,4 +123,3 @@ export const TechStackSection: React.FC = () => {
 };
 
 export default TechStackSection;
-

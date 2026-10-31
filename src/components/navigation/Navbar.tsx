@@ -3,8 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowUpRight, FileText } from "lucide-react";
-import Magnet from "../effects/Magnet";
+import { Menu, X, ArrowUpRight, FileText, Sparkles } from "lucide-react";
 
 const NAV_LINKS = [
   { name: "Home", href: "/" },
@@ -23,13 +22,12 @@ export const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 25);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on page change
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [pathname]);
@@ -38,36 +36,36 @@ export const Navbar: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#08090D]/85 backdrop-blur-md border-b border-white/10 py-3 shadow-2xl"
+          ? "bg-cosmos-void/85 backdrop-blur-xl border-b border-white/[0.08] py-3.5 shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
           : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Brand */}
+          {/* Brand Monogram */}
           <Link
             href="/"
-            className="group flex items-center gap-3 transition-opacity hover:opacity-90"
+            className="group flex items-center gap-3 transition-opacity"
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#6C8CFF] to-[#58D8F0] p-[1px] flex items-center justify-center">
-              <div className="w-full h-full bg-[#08090D] rounded-[7px] flex items-center justify-center">
-                <span className="font-heading font-bold text-xs tracking-wider text-[#F5F5F7]">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-bright via-violet-soft to-cyan-laser p-[1px] flex items-center justify-center">
+              <div className="w-full h-full bg-cosmos-void rounded-[7px] flex items-center justify-center">
+                <span className="font-heading font-black text-xs tracking-wider text-silver-pure">
                   CP
                 </span>
               </div>
             </div>
-            <div>
-              <span className="font-heading font-semibold tracking-tight text-[#F5F5F7] text-base group-hover:text-accent-blue transition-colors">
+            <div className="flex items-center gap-2">
+              <span className="font-heading font-bold tracking-tight text-silver-pure text-base group-hover:text-indigo-bright transition-colors">
                 CHETAN PALTA
               </span>
-              <span className="hidden sm:inline-block ml-2 text-[11px] font-mono text-[#58D8F0] bg-[#58D8F0]/10 px-2 py-0.5 rounded-full border border-[#58D8F0]/20">
-                AI + Full-Stack
+              <span className="hidden sm:inline-block text-[10px] font-mono text-cyan-soft bg-cyan-soft/10 px-2 py-0.5 rounded-full border border-cyan-soft/20">
+                COSMOS
               </span>
             </div>
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 bg-[#10121A]/80 border border-white/10 rounded-full px-4 py-1.5 backdrop-blur-md">
+          {/* Desktop Floating Pill Navigation */}
+          <nav className="hidden md:flex items-center gap-1 bg-cosmos-card/80 border border-white/[0.08] rounded-full px-4 py-1.5 backdrop-blur-xl shadow-lg">
             {NAV_LINKS.map((link) => {
               const isActive =
                 link.href === "/"
@@ -78,10 +76,10 @@ export const Navbar: React.FC = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`relative px-3.5 py-1.5 text-xs font-medium tracking-wide transition-all rounded-full ${
+                  className={`relative px-3.5 py-1.5 text-xs font-mono tracking-wide transition-all rounded-full ${
                     isActive
-                      ? "text-[#F5F5F7] bg-white/10 shadow-sm"
-                      : "text-[#9A9EAA] hover:text-[#F5F5F7] hover:bg-white/5"
+                      ? "text-silver-pure bg-white/10 shadow-sm"
+                      : "text-silver-muted hover:text-silver-pure hover:bg-white/[0.04]"
                   }`}
                 >
                   {link.name}
@@ -90,38 +88,36 @@ export const Navbar: React.FC = () => {
             })}
           </nav>
 
-          {/* Action CTAs */}
+          {/* Action CTA */}
           <div className="hidden lg:flex items-center gap-3">
-            <Magnet magnetStrength={0.2}>
-              <a
-                href="/resume/chetan-palta-resume.pdf"
-                download="Chetan_Palta_Resume.pdf"
-                className="group flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-mono text-[#F5F5F7] bg-[#141722] hover:bg-[#1A1E2D] border border-white/10 hover:border-accent-blue/40 rounded-lg transition-all"
-              >
-                <FileText className="w-3.5 h-3.5 text-accent-blue group-hover:scale-110 transition-transform" />
-                <span>Resume</span>
-                <ArrowUpRight className="w-3 h-3 text-[#9A9EAA] group-hover:text-accent-blue group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </a>
-            </Magnet>
+            <a
+              href="/resume/chetan-palta-resume.pdf"
+              download="Chetan_Palta_Resume.pdf"
+              className="group flex items-center gap-2 px-4 py-2 text-xs font-mono text-silver-pure bg-cosmos-card hover:bg-cosmos-elevated border border-white/10 hover:border-indigo-bright/50 rounded-xl transition-all"
+            >
+              <FileText className="w-3.5 h-3.5 text-indigo-bright group-hover:scale-110 transition-transform" />
+              <span>Resume</span>
+              <ArrowUpRight className="w-3 h-3 text-silver-dark group-hover:text-indigo-bright group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Toggle */}
           <div className="flex md:hidden items-center gap-2">
             <a
               href="/resume/chetan-palta-resume.pdf"
               download="Chetan_Palta_Resume.pdf"
-              className="p-2 text-xs text-[#9A9EAA] hover:text-white bg-[#141722] border border-white/10 rounded-lg"
+              className="p-2 text-xs text-silver-muted hover:text-white bg-cosmos-card border border-white/10 rounded-lg"
               title="Download Resume"
             >
-              <FileText className="w-4 h-4" />
+              <FileText className="w-4 h-4 text-indigo-bright" />
             </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-[#9A9EAA] hover:text-white bg-[#141722] border border-white/10 rounded-lg focus:outline-none"
+              className="p-2 text-silver-muted hover:text-white bg-cosmos-card border border-white/10 rounded-lg focus:outline-none"
               aria-label="Toggle Menu"
             >
               {mobileMenuOpen ? (
-                <X className="w-5 h-5 text-accent-blue" />
+                <X className="w-5 h-5 text-indigo-bright" />
               ) : (
                 <Menu className="w-5 h-5" />
               )}
@@ -130,9 +126,9 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#08090D]/95 border-b border-white/10 backdrop-blur-xl px-6 pt-4 pb-6 mt-3 space-y-2 animate-in slide-in-from-top-4 duration-200">
+        <div className="md:hidden bg-cosmos-void/95 border-b border-white/10 backdrop-blur-2xl px-6 pt-4 pb-6 mt-3 space-y-3">
           <div className="grid grid-cols-2 gap-2 pt-2 pb-4">
             {NAV_LINKS.map((link) => {
               const isActive =
@@ -144,10 +140,10 @@ export const Navbar: React.FC = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`block px-3 py-2 text-sm font-medium rounded-lg transition-all ${
+                  className={`block px-3 py-2 text-xs font-mono rounded-lg transition-all ${
                     isActive
-                      ? "text-accent-blue bg-accent-blue/10 border border-accent-blue/20"
-                      : "text-[#9A9EAA] hover:text-[#F5F5F7] bg-[#10121A]/60"
+                      ? "text-indigo-bright bg-indigo-bright/10 border border-indigo-bright/20 font-semibold"
+                      : "text-silver-muted hover:text-silver-pure bg-cosmos-card/70"
                   }`}
                 >
                   {link.name}
@@ -157,13 +153,13 @@ export const Navbar: React.FC = () => {
           </div>
 
           <div className="pt-2 border-t border-white/10 flex items-center justify-between">
-            <span className="text-xs font-mono text-[#9A9EAA]">
+            <span className="text-[11px] font-mono text-silver-dark">
               Ludhiana, India (IST)
             </span>
             <a
               href="/resume/chetan-palta-resume.pdf"
               download="Chetan_Palta_Resume.pdf"
-              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-mono text-white bg-accent-blue hover:bg-accent-blue/90 rounded-lg"
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-mono text-white bg-indigo-electric hover:bg-indigo-bright rounded-lg"
             >
               <FileText className="w-3.5 h-3.5" />
               <span>Download CV</span>
@@ -176,4 +172,3 @@ export const Navbar: React.FC = () => {
 };
 
 export default Navbar;
-

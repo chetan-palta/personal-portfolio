@@ -7,7 +7,7 @@ import {
   ExternalLink,
   Layers,
   Server,
-  Code,
+  Code2,
   ShieldCheck,
   Calendar,
   MapPin,
@@ -28,52 +28,52 @@ export default function ExperiencePage() {
   const exp = EXPERIENCE[0];
 
   return (
-    <div className="pt-32 pb-24 min-h-screen">
+    <div className="pt-32 pb-24 min-h-screen bg-cosmos-void">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Header */}
-        <div className="max-w-3xl">
-          <div className="flex items-center gap-2 text-xs font-mono text-accent-blue uppercase tracking-widest mb-3">
+        <div className="max-w-3xl space-y-4">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-cyan-soft uppercase tracking-widest">
             <span>// PROFESSIONAL EXPERIENCE</span>
           </div>
-          <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#F5F5F7] tracking-tight">
+          <h1 className="font-heading font-black text-4xl sm:text-6xl lg:text-7xl text-silver-pure tracking-[-0.03em] leading-tight">
             Commercial Software Engineering.
           </h1>
-          <p className="mt-4 text-[#9A9EAA] text-lg leading-relaxed">
+          <p className="text-base sm:text-xl text-silver-muted font-light leading-relaxed">
             Hands-on commercial delivery. Building client-facing enterprise software from zero to live production deployment.
           </p>
         </div>
 
         {/* Primary Role Breakdown */}
-        <div className="rounded-2xl border border-white/10 bg-[#10121A] p-8 lg:p-12 space-y-10 shadow-2xl">
+        <div className="rounded-3xl border border-white/[0.08] bg-cosmos-card p-8 lg:p-12 space-y-10 shadow-2xl backdrop-blur-xl">
           {/* Header Row */}
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between pb-8 border-b border-white/5 gap-6">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between pb-8 border-b border-white/[0.06] gap-6">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Active Internship</span>
+                <span>Active Commercial Role</span>
               </div>
-              <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#F5F5F7]">
+              <h2 className="font-heading font-black text-3xl sm:text-4xl text-silver-pure tracking-tight">
                 {exp.company}
               </h2>
-              <div className="text-lg text-accent-blue font-medium">
+              <div className="text-lg text-indigo-bright font-medium">
                 {exp.role}
               </div>
             </div>
 
-            <div className="flex flex-col items-start lg:items-end gap-3 text-xs font-mono text-[#9A9EAA]">
+            <div className="flex flex-col items-start lg:items-end gap-3 text-xs font-mono text-silver-muted">
               <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-accent-cyan" />
+                <Calendar className="w-4 h-4 text-cyan-soft" />
                 <span>{exp.period}</span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-accent-cyan" />
+                <MapPin className="w-4 h-4 text-cyan-soft" />
                 <span>{exp.location}</span>
               </div>
               <a
                 href="https://shivaglassgroup.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-1 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-accent-blue/10 hover:bg-accent-blue/20 text-accent-blue border border-accent-blue/30 transition-colors"
+                className="mt-1 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-electric/15 hover:bg-indigo-electric/25 text-indigo-bright border border-indigo-bright/30 transition-colors"
               >
                 <span>Live Site (shivaglassgroup.com)</span>
                 <ExternalLink className="w-3.5 h-3.5" />
@@ -83,38 +83,38 @@ export default function ExperiencePage() {
 
           {/* Core Contribution Overview */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-xl bg-[#141722] border border-white/5 space-y-3">
-              <div className="w-9 h-9 rounded-lg bg-accent-blue/10 text-accent-blue flex items-center justify-center">
-                <Code className="w-5 h-5" />
+            <div className="p-7 rounded-2xl bg-cosmos-elevated/70 border border-white/[0.05] space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-indigo-electric/15 text-indigo-bright flex items-center justify-center">
+                <Code2 className="w-5 h-5" />
               </div>
-              <h3 className="font-heading font-semibold text-lg text-white">
+              <h3 className="font-heading font-bold text-lg text-silver-pure">
                 Full-Stack Architecture
               </h3>
-              <p className="text-xs text-[#9A9EAA] leading-relaxed">
+              <p className="text-xs sm:text-sm text-silver-muted leading-relaxed font-light">
                 Single-handedly developed both frontend catalog interfaces and backend service APIs from scratch using React, TypeScript, and Node.js.
               </p>
             </div>
 
-            <div className="p-6 rounded-xl bg-[#141722] border border-white/5 space-y-3">
-              <div className="w-9 h-9 rounded-lg bg-accent-cyan/10 text-accent-cyan flex items-center justify-center">
+            <div className="p-7 rounded-2xl bg-cosmos-elevated/70 border border-white/[0.05] space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-cyan-soft/10 text-cyan-soft flex items-center justify-center">
                 <Search className="w-5 h-5" />
               </div>
-              <h3 className="font-heading font-semibold text-lg text-white">
+              <h3 className="font-heading font-bold text-lg text-silver-pure">
                 SEO & Technical Visibility
               </h3>
-              <p className="text-xs text-[#9A9EAA] leading-relaxed">
+              <p className="text-xs sm:text-sm text-silver-muted leading-relaxed font-light">
                 Structured canonical tagging, JSON-LD Schema.org product vocabulary, dynamic sitemaps, and optimized asset loading for search engine indexing.
               </p>
             </div>
 
-            <div className="p-6 rounded-xl bg-[#141722] border border-white/5 space-y-3">
-              <div className="w-9 h-9 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+            <div className="p-7 rounded-2xl bg-cosmos-elevated/70 border border-white/[0.05] space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
                 <BarChart2 className="w-5 h-5" />
               </div>
-              <h3 className="font-heading font-semibold text-lg text-white">
+              <h3 className="font-heading font-bold text-lg text-silver-pure">
                 Analytics & Governance
               </h3>
-              <p className="text-xs text-[#9A9EAA] leading-relaxed">
+              <p className="text-xs sm:text-sm text-silver-muted leading-relaxed font-light">
                 Configured Google Analytics 4 event triggers to capture user interactions, inquiry submissions, and mobile device behavioral funnels.
               </p>
             </div>
@@ -122,7 +122,7 @@ export default function ExperiencePage() {
 
           {/* Deep Technical Responsibilities */}
           <div className="space-y-6 pt-4">
-            <h3 className="font-heading font-bold text-xl text-[#F5F5F7]">
+            <h3 className="font-heading font-bold text-xl text-silver-pure">
               Detailed Engineering Responsibilities
             </h3>
 
@@ -130,10 +130,10 @@ export default function ExperiencePage() {
               {exp.responsibilities.map((resp, i) => (
                 <div
                   key={i}
-                  className="flex items-start gap-3 p-4 rounded-xl bg-[#141722] border border-white/5"
+                  className="flex items-start gap-3 p-4 rounded-2xl bg-cosmos-elevated/70 border border-white/[0.05]"
                 >
-                  <CheckCircle2 className="w-4 h-4 text-accent-blue shrink-0 mt-0.5" />
-                  <span className="text-xs sm:text-sm text-[#9A9EAA] leading-relaxed">
+                  <CheckCircle2 className="w-4 h-4 text-cyan-soft shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-silver-muted leading-relaxed font-light">
                     {resp}
                   </span>
                 </div>
@@ -142,13 +142,13 @@ export default function ExperiencePage() {
           </div>
 
           {/* Engineering Takeaways & Case Study Link */}
-          <div className="pt-6 border-t border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div className="text-xs font-mono text-[#58D8F0]">
+          <div className="pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="text-xs font-mono text-cyan-soft">
               Authentic commercial project · Built from the ground up
             </div>
             <Link
               href="/projects/shiva-glass"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-accent-blue hover:bg-accent-blue/90 text-white text-xs font-mono font-medium transition-colors w-fit"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-electric hover:bg-indigo-bright text-white text-xs font-mono font-medium transition-colors w-fit shadow-[0_0_20px_rgba(99,102,241,0.25)]"
             >
               <span>Explore Complete Shiva Glass Case Study</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -159,4 +159,3 @@ export default function ExperiencePage() {
     </div>
   );
 }
-
